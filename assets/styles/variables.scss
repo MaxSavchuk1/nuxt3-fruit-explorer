@@ -1,0 +1,21 @@
+:root {
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+  --fw-bold: 700;
+
+  --fs-400: 1.3rem;
+  --fs-500: 1.4rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.6rem;
+  --fs-800: 1.8rem;
+
+  --line-height-400: 1.6rem;
+  --line-height-600: 2.4rem;
+
+  --ff-primary:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --f-body: var(--fs-600) / var(--line-height-400) var(--ff-primary);
+}
