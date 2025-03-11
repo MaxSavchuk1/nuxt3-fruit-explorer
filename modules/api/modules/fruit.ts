@@ -1,5 +1,5 @@
-import type { Fruit } from "~/types";
 import ApiClient from "../api-client";
+import type { Fruit } from "~/types";
 import type ApiOptions from "../api-options";
 
 export default {

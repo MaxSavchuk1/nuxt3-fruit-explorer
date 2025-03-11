@@ -7,14 +7,15 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "@nuxt/image",
     "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "nuxt-lodash",
+    "@vueuse/nuxt",
     [
       "@vee-validate/nuxt",
       {
         autoImports: true,
       },
     ],
-    "@pinia/nuxt",
-    "nuxt-lodash",
   ],
   css: ["~/assets/styles/main.scss"],
   runtimeConfig: {
