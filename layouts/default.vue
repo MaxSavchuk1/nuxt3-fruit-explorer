@@ -25,6 +25,7 @@ const title = ref("Fruit explorer");
 .default-layout {
   display: flex;
   flex-direction: column;
+  height: 100%;
   flex: 1 1 0%;
 }
 </style>

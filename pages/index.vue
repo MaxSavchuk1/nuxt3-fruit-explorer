@@ -1,3 +1,5 @@
 <script setup lang="ts"></script>
 
-<template><div>Init</div></template>
+<template>
+  <div class="container">Init</div>
+</template>
