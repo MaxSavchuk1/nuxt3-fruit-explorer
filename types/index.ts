@@ -7,6 +7,7 @@ export type Nutritions = {
 };
 
 export type Fruit = {
+  id: number;
   genus: string;
   name: string;
   family: string;
