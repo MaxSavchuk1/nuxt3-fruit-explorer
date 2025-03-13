@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     "@pinia/nuxt",
     "nuxt-lodash",
     "@vueuse/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
     [
       "@vee-validate/nuxt",
       {

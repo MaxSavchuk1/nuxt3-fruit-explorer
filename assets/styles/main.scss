@@ -1,8 +1,8 @@
+@use "variables" as vars;
 @import url(./reset.scss);
-@import url(./variables.scss);
 
 body {
-  font: var(--f-body);
+  font: vars.$font-body;
 }
 
 html,

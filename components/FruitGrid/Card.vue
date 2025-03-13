@@ -22,7 +22,7 @@ defineProps<{ fruit: Fruit }>();
       </li>
     </ul>
 
-    <FruitCardFavoritesButton :fruit-id="fruit.id" />
+    <FruitGridFavoritesButton :fruit-id="fruit.id" />
   </div>
 </template>
 
