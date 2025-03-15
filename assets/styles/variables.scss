@@ -16,3 +16,8 @@ $ff-primary:
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $font-body: $fs-base / $line-height-normal $ff-primary;
+
+$c-primary: rgba(255, 165, 0, 1);
+$c-primary-light: rgba(255, 165, 0, 0.25);
+$c-primary-extralight: rgba(255, 165, 0, 0.05);
+$c-primary-dark: rgb(200, 130, 0);
