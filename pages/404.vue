@@ -1,10 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: "empty",
+});
+</script>
 
 <template>
   <div class="not-found">
     <h2>404</h2>
     <span>Page doesn't exist</span>
-    <router-link to="/">Go Home</router-link>
+    <NuxtLink to="/" style="font-weight: bold; text-decoration: underline">
+      Go Home
+    </NuxtLink>
   </div>
 </template>
 
