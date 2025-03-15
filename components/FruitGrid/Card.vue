@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Fruit } from "~/types";
-onUpdated(() => console.log("first"));
 
 defineProps<{ fruit: Fruit }>();
 </script>
@@ -10,7 +9,10 @@ defineProps<{ fruit: Fruit }>();
     <h3>{{ fruit.name }}</h3>
 
     <p>
-      family: <span style="font-weight: bold">{{ fruit.family }}</span>
+      family:
+      <NuxtLink :to="`/family/${fruit.family}`" class="underline">
+        {{ fruit.family }}
+      </NuxtLink>
     </p>
 
     <ul>
@@ -27,6 +29,8 @@ defineProps<{ fruit: Fruit }>();
 </template>
 
 <style lang="scss" scoped>
+@use "~/assets/styles/variables" as *;
+
 .fruit-card--container {
   position: relative;
   display: flex;
@@ -35,27 +39,32 @@ defineProps<{ fruit: Fruit }>();
   justify-content: space-between;
   width: clamp(200px, 100%, 250px);
   height: 200px;
-  border: 1px solid rgba(255, 165, 0, 1);
+  border: 1px solid $c-primary;
   border-radius: 8px;
   padding: 8px;
-  background-color: rgba(255, 165, 0, 0.05);
+  background-color: $c-primary-extralight;
 
   h3 {
-    font-size: 1.1rem;
+    font-size: $fs-lg;
     font-weight: bold;
     max-width: 80%;
     text-align: center;
   }
 
   ul {
-    font-size: 0.8rem;
+    font-size: $fs-xs;
     & > li + li {
       margin-top: 4px;
     }
   }
 
+  a {
+    font-weight: bold;
+    color: $c-primary-dark;
+  }
+
   &:hover {
-    box-shadow: 0px 0px 6px 6px rgba(255, 165, 0, 0.25);
+    box-shadow: 0px 0px 6px 6px $c-primary-light;
   }
 }
 </style>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { fruits } = storeToRefs(useFruitsStore());
+import type { Fruit } from "~/types";
+
+defineProps<{ fruits: Fruit[] }>();
 </script>
 
 <template>

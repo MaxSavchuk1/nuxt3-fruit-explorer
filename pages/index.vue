@@ -1,10 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { fruits } = storeToRefs(useFruitsStore());
+</script>
 
 <template>
   <div class="container">
     <div></div>
 
-    <FruitGrid />
+    <FruitGrid :fruits />
   </div>
 </template>
 

@@ -6,7 +6,11 @@ export const useFruitsStore = defineStore(
   () => {
     // optimization: there is no need to make every fruit object reactive, so I used shallowRef
     const fruits: ShallowRef<Fruit[]> = shallowRef([]);
-    const favorites: Ref<number[]> = ref([]);
+    const favoritesIds: Ref<number[]> = ref([]);
+
+    const favoriteFruits = computed(() =>
+      fruits.value.filter((fruit) => favoritesIds.value.includes(fruit.id)),
+    );
 
     const fetchFruits = () =>
       useApi().fruit.getAllFruits({
@@ -18,19 +22,20 @@ export const useFruitsStore = defineStore(
     };
 
     const addToFavorites = (fruitId: number) => {
-      favorites.value.push(fruitId);
+      favoritesIds.value.push(fruitId);
     };
 
     const removeFromFavorites = (fruitId: number) => {
-      favorites.value = favorites.value.filter((id) => fruitId !== id);
+      favoritesIds.value = favoritesIds.value.filter((id) => fruitId !== id);
     };
 
     const isInFavorites = (fruitId: number) =>
-      favorites.value.includes(fruitId);
+      favoritesIds.value.includes(fruitId);
 
     return {
       fruits,
-      favorites,
+      favoritesIds,
+      favoriteFruits,
 
       fetchFruits,
       fetchFruitsOnce,
@@ -39,11 +44,11 @@ export const useFruitsStore = defineStore(
       isInFavorites,
     };
   },
-  // using persist plugin for save favorite fruits
+  // using persist plugin for saving favorite fruits
   {
     persist: {
       storage: localStorage,
-      pick: ["favorites"],
+      pick: ["favoritesIds"],
     },
   },
 );

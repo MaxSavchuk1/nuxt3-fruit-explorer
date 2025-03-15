@@ -8,10 +8,15 @@ const title = ref("Fruit explorer");
     <Head>
       <Title>{{ title }}</Title>
     </Head>
+
     <Body>
       <main class="default-layout">
+        <!-- optimization: hydrate component when browser is idle -->
+        <LazyNavBar hydrate-on-idle />
+
         <slot></slot>
       </main>
+
       <ClientOnly>
         <Teleport to="body">
           <Loader :show="isLoading" />
