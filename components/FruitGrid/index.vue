@@ -6,7 +6,12 @@ defineProps<{ fruits: Fruit[] }>();
 
 <template>
   <div class="fruits-grid">
-    <FruitGridCard v-for="fruit in fruits" :key="fruit.id" :fruit />
+    <LazyFruitGridCard
+      v-for="fruit in fruits"
+      :key="fruit.id"
+      :fruit
+      hydrate-on-visible
+    />
   </div>
 </template>
 
